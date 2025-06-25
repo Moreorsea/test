@@ -1,0 +1,12 @@
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  server: {
+    port: 5000, // Ваш кастомный порт
+    host: 'localhost', // Явное указание хоста
+  },
+  base: process.env.NODE_ENV === 'production' ? 'test' : '/',
+})
