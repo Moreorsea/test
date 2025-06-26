@@ -8,5 +8,5 @@ export default defineConfig({
     port: 5000, // Ваш кастомный порт
     host: 'localhost', // Явное указание хоста
   },
-  base: process.env.NODE_ENV === 'production' ? 'test' : '/',
+  base: process.env.NODE_ENV === 'production' ? 'test' : './',
 })
