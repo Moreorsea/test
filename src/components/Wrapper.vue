@@ -1,20 +1,36 @@
 <template>
-  <div class="wrapper">
+  <div class="container">
     <!-- <Header /> -->
 
-    <FirstScreen v-if="true" />
+    <SecondScreen
+      v-if="prognose"
+      :prognose="prognose.text"
+      @get-repeat-prognose="getSecondPrognose" />
 
-    <SecondScreen v-if="false" />
-
+    <FirstScreen v-else @get-prognose="getPrognose" />
     <!-- <Sphere /> -->
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 import FirstScreen from './FirstScreen.vue';
 import SecondScreen from './SecondScreen.vue';
 import Header from './Header.vue';
 import Sphere from './Sphere.vue';
+
+import { hr_predictions, hr_repeat_predications} from '../mock/prognoses.json';
+
+const prognose = ref('');
+console.log('PROG', hr_predictions)
+
+const getPrognose = () => {
+  prognose.value = hr_predictions[Math.floor(Math.random() * hr_predictions.length)];
+}
+
+const getSecondPrognose = () => {
+  prognose.value = hr_repeat_predications[Math.floor(Math.random() * hr_repeat_predications.length)];
+}
 </script>
 
 <style>
@@ -247,4 +263,8 @@ h1 {
     font-size: 56px;
   }
 }
+/*
+.wrapper {
+  overflow: hidden;
+} */
 </style>

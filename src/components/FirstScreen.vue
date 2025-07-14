@@ -34,7 +34,7 @@
       <Sphere />
       </div>
       <div class="grid-footer">
-        <button class="glass glass-btn">Получить предсказание</button>
+        <button class="glass glass-btn" @click="$emit('get-prognose')">Получить предсказание</button>
       </div>
   </div>
 </template>
@@ -42,6 +42,8 @@
 <script setup>
 import Header from './Header.vue';
 import Sphere from './Sphere.vue';
+
+defineEmits(['get-prognose']);
 </script>
 
 <style lang="scss" scoped>
@@ -55,7 +57,11 @@ import Sphere from './Sphere.vue';
   background-repeat: no-repeat;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr 100px;
+  grid-template-rows: auto 1fr 20%;
+
+  @media(min-width: 480px) {
+    grid-template-rows: auto 1fr 16%;
+  }
 
   @media(min-width: 640px) {
     grid-template-rows: auto 1fr 180px;
@@ -69,8 +75,11 @@ import Sphere from './Sphere.vue';
 .grid {
   width: 286px;
   margin: 0 auto;
+  display: grid;
+  grid-template-rows: 31% 34% calc(100% - 31% - 34%);
 
   @media(min-width: 480px) {
+    grid-template-rows: 36% 23% calc(100% - 36% - 23%);
     width: 419px;
   }
 
@@ -90,7 +99,9 @@ import Sphere from './Sphere.vue';
     margin-bottom: 69px;
 
     @media(min-width: 480px) {
-      margin-bottom: 115px;
+      //margin-bottom: 115px;
+      //margin-bottom: 7.1rem;
+      margin-bottom: 27%;
     }
 
     @media(min-width: 640px) {
@@ -171,11 +182,14 @@ import Sphere from './Sphere.vue';
   display: flex;
   justify-content: flex-start;
   margin-left: 4%;
-  margin-bottom: 69px;
+  //margin-bottom: 69px;
+  //margin-bottom: 4.2rem;
 
   @media(min-width: 480px) {
     margin-left: 0;
-    margin-bottom: 56px;
+    //margin-bottom: 56px;
+    //margin-bottom: 3.7rem;
+    //margin-bottom: 14%;
   }
 
   @media(min-width: 640px) {
@@ -196,6 +210,8 @@ import Sphere from './Sphere.vue';
     letter-spacing: 0.5px;
     width: 170px;
     font-weight: 400;
+    display: flex;
+    align-self: baseline;
 
     @media(min-width: 480px) {
       font-size: 13px;
@@ -227,7 +243,7 @@ import Sphere from './Sphere.vue';
 .row-second {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
 
   @media(min-width: 640px) {}
 
@@ -236,6 +252,8 @@ import Sphere from './Sphere.vue';
     padding: 8px 7px 12px;
     letter-spacing: 0.5px;
     width: 190px;
+    display: flex;
+    align-self: baseline;
 
     @media(min-width: 480px) {
       font-size: 13px;
