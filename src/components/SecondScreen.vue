@@ -5,6 +5,7 @@
     <div class="grid">
 
     <h1 class="grid__title">Магический шар предсказывает революцию в работе с ЛНА!</h1>
+    <h2>SUBTITLE</h2>
 
     <section class="grid__content">
     <!-- <div class="glass grid__text">
@@ -241,6 +242,14 @@ defineEmits(['get-repeat-prognose']);
 
     & p {
       margin-bottom: 14px;
+    }
+  }
+
+  h2 {
+    display: none;
+
+    @media(min-width: 960px) {
+      display: block;
     }
   }
 
