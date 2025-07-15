@@ -1,11 +1,10 @@
 <template>
-  <div class="background">
+    <Background>
   <div class="wrapper">
     <Header />
     <div class="grid">
 
     <h1 class="grid__title">Магический шар предсказывает революцию в работе с ЛНА!</h1>
-    <h2>SUBTITLE</h2>
 
     <section class="grid__content">
     <!-- <div class="glass grid__text">
@@ -30,12 +29,14 @@
 
     <SecondScreenSphere />
   </div>
-</div>
+</Background>
 </template>
 
 <script setup>
+import Background from './Background.vue';
 import Header from './Header.vue';
 import SecondScreenSphere from './SecondScreenSphere.vue';
+
 
 const props = defineProps({
   prognose: String,
@@ -45,31 +46,31 @@ defineEmits(['get-repeat-prognose']);
 </script>
 
 <style lang="scss" scoped>
-.background {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000611;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url('../assets/background-320.png');
+// .background {
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: #000611;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-image: url('../assets/background-320.png');
 
-  @media(min-width: 480px) {
-    background-image: url('../assets/background-480.png');
-  }
+//   @media(min-width: 480px) {
+//     background-image: url('../assets/background-480.png');
+//   }
 
-  @media(min-width: 640px) {
-    background-image: url('../assets/background-640.png');
-  }
+//   @media(min-width: 640px) {
+//     background-image: url('../assets/background-640.png');
+//   }
 
-  @media(min-width: 960px) {
-    background-image: url('../assets/background-960.png');
-  }
+//   @media(min-width: 960px) {
+//     background-image: url('../assets/background-960.png');
+//   }
 
-  @media(min-width: 1440px) {
-    background-image: url('../assets/background-1440.png');
-  }
-}
+//   @media(min-width: 1440px) {
+//     background-image: url('../assets/background-1440.png');
+//   }
+// }
 .wrapper {
   /* background-image: url('../assets/background-320.png'); */
 

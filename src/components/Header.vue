@@ -35,6 +35,10 @@ import VkTech from '../assets/vk-tech.png';
   @media(min-width: 960px) {
     padding: 62px 15px 32px;
   }
+
+  @media(min-width: 1440px) {
+    padding: 62px 15px 32px;
+  }
 }
 
 .header__logo {
@@ -45,29 +49,24 @@ import VkTech from '../assets/vk-tech.png';
   width: 100%;
   height: 12px;
   position: relative;
-}
 
-@media(min-width: 480px) {
-  .header__tech {
+  @media(min-width: 480px) {
     height: 18px;
   }
-}
 
-@media(min-width: 640px) {
-  .header__tech {
-    height: 25px;
+  @media(min-width: 640px) {
+    height: 28px;
+    margin-right: 15px;
   }
-}
 
-@media(min-width: 960px) {
-  .header__tech {
-    height: 41px;
+  @media(min-width: 960px) {
+    height: 46px;
+    margin-right: 21px;
   }
-}
 
-@media(min-width: 1440px) {
-  .header__tech {
-    height: 61px;
+  @media(min-width: 1440px) {
+    height: 63px;
+    margin-top: -5px;
   }
 }
 

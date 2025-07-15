@@ -1,6 +1,7 @@
 <template>
+  <Background>
   <div class="wrapper">
-    <img
+    <!-- <img
       class="background"
       src="../assets/background-320.png"
       srcset="
@@ -16,11 +17,15 @@
            320px"
       alt="Адаптивный фон"
       loading="lazy"
-    >
+    > -->
+    <!-- background: linear-gradient(180.15deg, rgba(0, 0, 0, 0) 37.56%, #000000 69.23%);
+ -->
   <Header />
 
-  <div class="grid">
   <h1 class="grid-title">Загляните <br />в ваше HR-будущее</h1>
+
+  <div class="grid">
+
 
   <div class="row-first">
         <button class="glass glass-label glass-label--left">Какие возможности откроются для вас в ближайшее время... </button>
@@ -37,11 +42,13 @@
         <button class="glass glass-btn" @click="$emit('get-prognose')">Получить предсказание</button>
       </div>
   </div>
+</Background>
 </template>
 
 <script setup>
 import Header from './Header.vue';
 import Sphere from './Sphere.vue';
+import Background from './Background.vue';
 
 defineEmits(['get-prognose']);
 </script>
@@ -50,33 +57,35 @@ defineEmits(['get-prognose']);
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: #000611;
+  //background-color: #000611;
   /* background-image: url('../assets/background-320.png'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr 20%;
+  grid-template-rows: auto auto 1fr 86px;
 
   @media(min-width: 480px) {
-    grid-template-rows: auto 1fr 16%;
+    grid-template-rows: auto auto 1fr 112px;
   }
 
   @media(min-width: 640px) {
-    grid-template-rows: auto 1fr 180px;
+    grid-template-rows: auto auto 1fr 188px;
   }
 
   @media(min-width: 1440px) {
-    grid-template-rows: auto 1fr 204px;
+    grid-template-rows: auto auto 1fr 214px;
   }
 }
 
 .grid {
   width: 286px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-rows: 31% 34% calc(100% - 31% - 34%);
+  margin: auto;
+  //display: grid;
+  //grid-template-rows: 31% 34% calc(100% - 31% - 34%);
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 480px) {
     grid-template-rows: 36% 23% calc(100% - 36% - 23%);
@@ -96,30 +105,30 @@ defineEmits(['get-prognose']);
   }
 
   &-title {
-    margin-bottom: 69px;
+    //margin-bottom: 69px;
 
     @media(min-width: 480px) {
       //margin-bottom: 115px;
       //margin-bottom: 7.1rem;
-      margin-bottom: 27%;
+      //margin-bottom: 27%;
     }
 
     @media(min-width: 640px) {
-      margin-bottom: 154px;
+      //margin-bottom: 154px;
     }
 
     @media(min-width: 960px) {
-      margin-bottom: 126px;
+      //margin-bottom: 126px;
     }
 
     @media(min-width: 1440px) {
-      margin-bottom: 177px;
+      //margin-bottom: 177px;
     }
   }
 
   &-footer {
     font-size: 12.5px;
-    margin-top: 23px;
+    padding-top: 10px;
 
     @media(min-width: 480px) {
       margin-top: 0;
@@ -163,14 +172,14 @@ defineEmits(['get-prognose']);
 }
 
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+// .background {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
 
 @media(min-width: 1440px) {
   /* .wrapper {
@@ -182,7 +191,7 @@ defineEmits(['get-prognose']);
   display: flex;
   justify-content: flex-start;
   margin-left: 4%;
-  //margin-bottom: 69px;
+  margin-bottom: 69px;
   //margin-bottom: 4.2rem;
 
   @media(min-width: 480px) {
